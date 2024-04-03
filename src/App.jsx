@@ -3,7 +3,8 @@ import Navbar from './composants/header/Navbar'
 import Liste from'./composants/listeRecettes/Liste'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
-
+import Footer from './composants/footer/Footer.jsx';
+import SearchBar from './composants/searchBar/SearchBar.jsx';
 
 function App() {
 
@@ -26,7 +27,9 @@ function App() {
   return (
     <>
      <Navbar />
+     <SearchBar />
      <Liste recipe={recipe}/>
+     <Footer />
     </>
   )
 }

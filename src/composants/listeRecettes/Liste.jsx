@@ -1,28 +1,17 @@
 import React from "react";
+import RecipeCard from "./RecipeCard"; 
 
-function Liste ({recipe}) {
-
-    return (
-        <div className="m-8	">
-        <h1 className="p-1 font-bold text-xl">Liste de recettes de cuisine</h1>
-        <div className="container mx-auto grid grid-cols-3 gap-10">
+function Liste({ recipe }) {
+  return (
+    <div className="m-8">
+      <h1 className="p-1 font-bold text-xl">Liste de recettes de cuisine</h1>
+      <div className="container mx-auto grid grid-cols-3 gap-10">
         {recipe && recipe.map(recipe => (
-          <div key={recipe.id} className="container mx-auto shadow-md ">
-            <img src={recipe.imageUrl} alt={recipe.title} style={{maxWidth: '100%'}} />
-            <h2 className="p-1 font-medium text-green-700">{recipe.title}</h2>
-            <div className="p-1">
-            <p><strong>Difficulté:</strong> {recipe.difficulty}</p>
-            <p><strong>Catégorie:</strong> {recipe.category}</p>
-            <p>{recipe.description}</p>
-            <p><strong>Auteur:</strong> {recipe.author}</p>
-            <p className="text-right text-green-700">En savoir plus</p>
-            </div>
-          </div>
+          <RecipeCard key={recipe.id} recipe={recipe} /> // Le composant RecipeCard ici
         ))}
-        </div>
       </div>
-    )
-    }
+    </div>
+  );
+}
 
-
-export default Liste 
+export default Liste;
