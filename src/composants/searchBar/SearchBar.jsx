@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-function SearchBar({ recipe }) {
+function SearchBar({ recipes, setRecipe}) {
     const [searchTerm, setSearchTerm] = useState('');
-    const [filteredRecipes, setFilteredRecipes] = useState([]);
+    console.log(recipes);
 
     useEffect(() => {
         filterData(searchTerm);
-    }, [searchTerm, recipe]);
+    }, [searchTerm]);
 
     const handleInputChange = (event) => {
         const { value } = event.target;
@@ -14,17 +14,16 @@ function SearchBar({ recipe }) {
     };
     
     const filterData = (searchTerm) => {
-        if (searchTerm === '') {
-            setFilteredRecipes(recipe);
-        } else {
-            const filteredData = recipe.filter((recipe) =>
+        
+            const filteredData = recipes.filter((recipe) =>
                 recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
             );
-            setFilteredRecipes(filteredData);
-        }
+            setRecipe(filteredData);
+            console.log(filteredData)
+            console.log(searchTerm)
     };
-
-    console.log(filteredRecipes);
+    
+   
     return (
         <div className="m-5">
             <label className="relative block">
@@ -34,7 +33,7 @@ function SearchBar({ recipe }) {
                 </span>
                 <input className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" 
                     placeholder="Search for anything..." 
-                    type="text" 
+                    type="search" 
                     name="search" 
                     value={searchTerm} 
                     onChange={handleInputChange}

@@ -8,7 +8,8 @@ import SearchBar from './composants/searchBar/SearchBar.jsx';
 
 function App() {
 
-  const [recipes, setRecipe] = useState(null);
+  const [recipes, setRecipe] = useState([]);
+ 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +28,7 @@ function App() {
   return (
     <>
      <Navbar />
-     <SearchBar recipes={recipes} />
+     <SearchBar recipes={recipes} setRecipe={setRecipe} />
      <Liste recipes={recipes}/>
      <Footer />
     </>
