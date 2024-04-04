@@ -1,28 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function SearchBar({ recipes, setRecipe}) {
-    const [searchTerm, setSearchTerm] = useState('');
-    console.log(recipes);
-
-    useEffect(() => {
-        filterData(searchTerm);
-    }, [searchTerm]);
-
-    const handleInputChange = (event) => {
-        const { value } = event.target;
-        setSearchTerm(value);
-    };
-    
-    const filterData = (searchTerm) => {
-        
-            const filteredData = recipes.filter((recipe) =>
-                recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-            setRecipe(filteredData);
-            console.log(filteredData)
-            console.log(searchTerm)
-    };
-    
+function SearchBar({ searchTerm, handleChange}) {
    
     return (
         <div className="m-5">
@@ -36,7 +14,7 @@ function SearchBar({ recipes, setRecipe}) {
                     type="search" 
                     name="search" 
                     value={searchTerm} 
-                    onChange={handleInputChange}
+                    onChange={handleChange}
                 />
             </label>
             <ul>

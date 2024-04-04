@@ -9,6 +9,12 @@ import SearchBar from './composants/searchBar/SearchBar.jsx';
 function App() {
 
   const [recipes, setRecipe] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('')
+  const [favorites, setFavorites] = useState([]);
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
  
 
   useEffect(() => {
@@ -28,8 +34,8 @@ function App() {
   return (
     <>
      <Navbar />
-     <SearchBar recipes={recipes} setRecipe={setRecipe} />
-     <Liste recipes={recipes}/>
+     <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
+     <Liste recipes={recipes} setRecipe={setRecipe} searchTerm={searchTerm} favorites={favorites} setFavorites={setFavorites}/>
      <Footer />
     </>
   )
