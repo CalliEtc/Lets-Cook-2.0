@@ -6,6 +6,7 @@ import axios from 'axios';
 import Footer from './composants/footer/Footer.jsx';
 import SearchBar from './composants/searchBar/SearchBar.jsx';
 
+
 function App() {
 
   const [recipes, setRecipe] = useState([]);
@@ -37,6 +38,7 @@ function App() {
      <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
      <Liste recipes={recipes} setRecipe={setRecipe} searchTerm={searchTerm} favorites={favorites} setFavorites={setFavorites}/>
      <Footer />
+
     </>
   )
 }

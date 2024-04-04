@@ -10,7 +10,7 @@ function Liste({ recipes, setRecipe, searchTerm, favorites, setFavorites}) {
       <h1 className="p-1 font-bold text-xl">Liste de recettes de cuisine</h1>
       <div className="container mx-auto grid grid-cols-3 gap-10">
         {filteredRecipes.map(recipes => (
-          <RecipeCard key={recipes.id} recipes={recipes} setRecipe={setRecipe} favorites={favorites} setFavorites={setFavorites}/> // Le composant RecipeCard ici
+          <RecipeCard key={recipes.id} recipes={recipes} setRecipe={setRecipe} favorites={favorites} setFavorites={setFavorites} filteredRecipes={filteredRecipes}/> // Le composant RecipeCard ici
         ))}
       </div>
     </div>
