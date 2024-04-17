@@ -4,13 +4,24 @@ import { HeartIcon as OutlineHeartIcon } from "@heroicons/react/24/outline";
 
 function RecipeCard({ recipes, setRecipe, favorites, filteredRecipes }) {
   console.log("ok", recipes);
+  // Fonction handleAddFavorite qui prend un identifiant (id) en paramètre
   const handleAddFavorite = (id) => {
+    // Utilisation de la fonction setRecipe pour mettre à jour l'état des recettes
     setRecipe(
+      // Mapping sur les recettes filtrées (filteredRecipes) pour les mettre à jour
       filteredRecipes.map((recipe) =>
-        recipe.id === id ? { ...recipe, favorites: !recipe.favorites } : recipe
+        // Vérification si l'identifiant de la recette correspond à celui passé en paramètre
+        recipe.id === id ? 
+          // Si oui, retourner la recette avec le statut favori inversé
+          { ...recipe, favorites: !recipe.favorites } : 
+          // Si non, retourner la recette sans modification
+          recipe
       )
     );
+    
   };
+
+  console.log("favoris", favorites)
 
   return (
     <div className="container mx-auto shadow-md">
@@ -35,8 +46,6 @@ function RecipeCard({ recipes, setRecipe, favorites, filteredRecipes }) {
         <button 
           onClick={
             () => handleAddFavorite(recipes.id)
-            // handleRemoveFavorite(recipes.id)
-            // : handleAddFavorite(recipes.id)
           }
         >
           {recipes.favorites ? (

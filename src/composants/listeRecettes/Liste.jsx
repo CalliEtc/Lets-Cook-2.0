@@ -2,8 +2,11 @@ import RecipeCard from "./RecipeCard";
 
 function Liste({ recipes, setRecipe, searchTerm, favorites, setFavorites}) {
 
-  const filteredRecipes = recipes.filter((recipe) =>
-  recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+ // Utilisation de la méthode filter() sur le tableau recipes pour filtrer les recettes en fonction d'un critère
+// La fonction de filtrage est une fonction anonyme qui prend une recette comme paramètre
+// Elle vérifie si le titre de la recette (en minuscules) contient le terme de recherche (également en minuscules)
+const filteredRecipes = recipes.filter((recipe) =>
+recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
 );
   return (
     <div className="m-8">
