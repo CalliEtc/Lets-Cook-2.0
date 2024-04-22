@@ -1,6 +1,4 @@
 import React from "react";
-import { HeartIcon as SolidHeartIcon } from "@heroicons/react/24/solid";
-import { HeartIcon as OutlineHeartIcon } from "@heroicons/react/24/outline";
 
 function RecipeCard({ recipes, setRecipe, favorites, filteredRecipes }) {
   console.log("ok", recipes);

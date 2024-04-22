@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 ## README
 
-Voici les éléments clés qu'il pourrait contenir :
+
 
 ### 1\. Description
 
