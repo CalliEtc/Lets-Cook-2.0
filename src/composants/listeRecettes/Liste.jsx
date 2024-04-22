@@ -35,7 +35,7 @@ const filteredRecipes = recipes.filter((recipe) => {
   return (
     <div className="m-8">
       <h1 className="p-1 font-bold text-xl">Liste de recettes de cuisine</h1>
-      <div className="container mx-auto grid grid-cols-3 gap-10">
+      <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {filteredRecipes.map((recipes) => (
           <RecipeCard
             key={recipes.id}
@@ -44,7 +44,7 @@ const filteredRecipes = recipes.filter((recipe) => {
             favorites={favorites}
             setFavorites={setFavorites}
             filteredRecipes={filteredRecipes}
-          /> // Le composant RecipeCard ici
+          /> 
         ))}
       </div>
     </div>

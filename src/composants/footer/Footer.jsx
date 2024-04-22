@@ -6,11 +6,11 @@ function Footer() {
         <img src="../images/footer.svg" alt="" />
       <div className="bg-red-700">
         
-        <section className="flex items-center p-5 ">
+        <section className="lg:flex items-center  p-5 ">
         <div>
-            <img src="../images/download.jpg" alt=""  className="max-w-64"/>
+            <img src="../images/download.jpg" alt=""  className="max-w-64 "/>
         </div>
-         <div className=" text-white m-5 ">
+         <div className=" text-white m-5   ">
             <strong>Téléchargez Notre Livre de Recettes Gratuit !</strong>
             <p className="text-balance m-1">
                 Plongez dans un monde de saveurs avec notre tout nouveau livre de recettes ! 
