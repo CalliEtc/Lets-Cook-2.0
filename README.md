@@ -9,55 +9,45 @@ Currently, two official plugins are available:
 
 ## README
 
-Voici les éléments clés qu'il pourrait contenir :
 
-### 1\. Titre du Projet
 
-- **Nom du projet :** Une description succincte ou un nom qui reflète la nature du projet.
+### 1\. Description
 
-### 2\. Description
+- Bienvenue sur la page de recettes de Let's Cook ! Cette page est dédiée à la présentation attrayante et organisée de diverses recettes de cuisine. Notre objectif est de fournir une expérience agréable et accessible aux utilisateurs, quel que soit le périphérique qu'ils utilisent.
 
-- **But du projet :** Une brève description expliquant l'objectif du projet, ses fonctionnalités principales, et son utilité.
-- **Technologies utilisées :** Mentionner ReactJS, Tailwind CSS, et toute autre technologie ou librairie importante intégrée dans le projet.
+- Ce projet a été fait sous react et en s'appuyant sur la librairie de ressources Tailwind.
 
-### 3\. Démarrage rapide
+### 2\. Installation 
 
-- **Prérequis :** Liste des prérequis logiciels (par exemple, Node.js) et de leur version.
-- **Installation :** Instructions pas à pas pour installer le projet localement, y compris les commandes à exécuter dans le terminal.
-- **Lancement :** Comment démarrer l'application en local.
+Pour exécuter ce projet localement, suivez ces étapes :
 
-### 4\. Utilisation
+- Clonez ce dépôt en utilisant la commande git clone dans votre terminal.
+- Naviguez vers le répertoire du projet : cd let-s-cook-recipes.
+- Installez les dépendances en exécutant : npm install.
+- Lancez l'application en utilisant : npm start.
 
-- **Guides d'utilisation :** Description de comment naviguer dans l'application, utiliser ses fonctionnalités principales (recherche, tri, etc.).
-- **Captures d'écran :** Fournir des captures d'écran pour illustrer l'interface utilisateur et les fonctionnalités clés.
 
-### 5\. Structure du Projet
+### 3\. Fonctionnalités
 
-- **Arborescence :** Une vue d'ensemble de la structure du projet, expliquant où trouver les composants clés, les styles, et les assets.
-- **Composants principaux :** Description des composants React créés et leur rôle dans l'application.
+- Affichage attrayant des recettes sous forme de cartes dans une grille.
+- Navigation intuitive entre les différentes recettes.
+- Filtre en fonction  de mot tapé 
+- Filtre en fonction des favoris
+- Prise en charge de différents périphériques (desktop, notebook, mobile, tablette).
 
-### 6\. Personnalisation
+### 4\. Structures
 
-- **Comment personnaliser :** Instructions pour modifier des éléments spécifiques (par exemple, thème de couleur, disposition des éléments) pour répondre à des besoins particuliers.
+- Le fichier principal est app et le reste sont des composants.
+- Le dossier header sert à afficher une navbar comprenant les liens fictifs vers d'autres pages et le bouton favoris.
+- Le dossier listeRecettes a deux composants : Liste et RecipeCard. RecipeCard est un composant qui permet l'affichage des recettes sous la forme de carte détaillé. Le fichier Liste affiche un nombre de cartes correpondant aux nombres de recettes.
+- Le dossier searchBar à un fichier SearchBar qui gère la récupération des valeurs écrit dans la navbar. Qui est ensuite utilisé pour filtrer les cards.
+- Le dossier Footer à un fichier footer qui gère l'affichage du footer.
+- Le dossier data contient un fichier JSON appelé recettes. Dans ce fichier est regroupé toute les recettes et leur informations.
+- Le dossier images regroupes différentes images utilisés.
 
-### 7\. Développement
 
-- **Conventions de codage :** Expliquer les conventions de codage adoptées dans le projet.
-- **Ajout de nouvelles fonctionnalités :** Guide sur la manière de contribuer au projet en ajoutant de nouvelles fonctionnalités ou en améliorant les existantes.
-- **Tests :** Instructions pour exécuter des tests, si applicable.
 
-### 8\. Déploiement
+### 5\. Ressources supplémentaires 
 
-- **Instructions de déploiement :** Guide étape par étape sur la manière de déployer l'application dans un environnement de production.
-
-### 9\. Contribuer
-
-- **Comment contribuer :** Directives pour les contributeurs potentiels, incluant les étapes pour soumettre des pull requests, signaler des bugs, ou suggérer des améliorations.
-
-### 10\. Crédits
-
-- **Auteurs et remerciements :** Liste des contributeurs au projet et remerciements à des individus, des organisations ou des ressources externes qui ont aidé.
-
-### 11\. Licence
-
-- **Détails de la licence :** Type de licence sous laquelle le projet est distribué, souvent avec un lien vers le texte complet de la licence.
+- ReactJS - Bibliothèque JavaScript pour la construction d'interfaces utilisateur.
+- Tailwind CSS - Cadre CSS utilitaire pour le stylage rapide et flexible.

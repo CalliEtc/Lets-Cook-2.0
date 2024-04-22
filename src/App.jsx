@@ -1,33 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Navbar from './composants/header/Navbar'
+import Liste from'./composants/listeRecettes/Liste'
+import { useEffect, useState } from 'react'
+import axios from 'axios';
+import Footer from './composants/footer/Footer.jsx';
+import SearchBar from './composants/searchBar/SearchBar.jsx';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [recipes, setRecipe] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('')
+  const [favorites, setFavorites] = useState([]);
+  const [buttonIsTrue, setButtonIsTrue] = useState(false);
+  
+// Fonction pour gérer les changements dans le champ de recherche
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+ 
+// Fonction pour gérer le clic sur le bouton favoris
+  const handleButton = () => {
+    setButtonIsTrue(!buttonIsTrue);
+  };
+
+  console.log(buttonIsTrue);
+
+ // Utiliser useEffect pour effectuer une action après le rendu initial
+useEffect(() => {
+  // Fonction asynchrone pour récupérer les données des recettes depuis un fichier JSON
+  const fetchData = async () => {
+    try {
+      // Effectuer une requête GET avec axios pour récupérer les données depuis le fichier JSON
+      const response = await axios.get('../data/recettes.json');
+      // Mettre à jour l'état des recettes avec les données récupérées
+      setRecipe(response.data);
+    } catch (error) {
+      // Gérer les erreurs en cas d'échec de la récupération des données
+      console.error('Erreur lors de la récupération des données :', error);
+    }
+  };
+  // Appeler la fonction fetchData lors du premier rendu uniquement en passant un tableau vide comme deuxième argument
+  fetchData();
+}, []);  // Tableau vide pour exécuter useEffect uniquement lors du premier rendu
+ 
+  console.log(recipes);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <Navbar handleButton={handleButton}/>
+     <SearchBar searchTerm={searchTerm} handleChange={handleChange} handleButton={handleButton} />
+     <Liste recipes={recipes} setRecipe={setRecipe} searchTerm={searchTerm} favorites={favorites} setFavorites={setFavorites} buttonIsTrue={buttonIsTrue}/>
+     <Footer />
+
     </>
   )
 }
