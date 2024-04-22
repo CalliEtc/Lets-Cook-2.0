@@ -15,6 +15,8 @@ Currently, two official plugins are available:
 
 - Bienvenue sur la page de recettes de Let's Cook ! Cette page est dédiée à la présentation attrayante et organisée de diverses recettes de cuisine. Notre objectif est de fournir une expérience agréable et accessible aux utilisateurs, quel que soit le périphérique qu'ils utilisent.
 
+- Ce projet a été fait sous react et en s'appuyant sur la librairie de ressources Tailwind.
+
 ### 2\. Installation 
 
 Pour exécuter ce projet localement, suivez ces étapes :
@@ -28,10 +30,24 @@ Pour exécuter ce projet localement, suivez ces étapes :
 ### 3\. Fonctionnalités
 
 - Affichage attrayant des recettes sous forme de cartes dans une grille.
-- Navigation intuitive entre les différentes recettes et retour à la page d'accueil.
+- Navigation intuitive entre les différentes recettes.
+- Filtre en fonction  de mot tapé 
+- Filtre en fonction des favoris
 - Prise en charge de différents périphériques (desktop, notebook, mobile, tablette).
 
-### 4\. Ressources supplémentaires 
+### 4\. Structures
+
+- Le fichier principal est app et le reste sont des composants.
+- Le dossier header sert à afficher une navbar comprenant les liens fictifs vers d'autres pages et le bouton favoris.
+- Le dossier listeRecettes a deux composants : Liste et RecipeCard. RecipeCard est un composant qui permet l'affichage des recettes sous la forme de carte détaillé. Le fichier Liste affiche un nombre de cartes correpondant aux nombres de recettes.
+- Le dossier searchBar à un fichier SearchBar qui gère la récupération des valeurs écrit dans la navbar. Qui est ensuite utilisé pour filtrer les cards.
+- Le dossier Footer à un fichier footer qui gère l'affichage du footer.
+- Le dossier data contient un fichier JSON appelé recettes. Dans ce fichier est regroupé toute les recettes et leur informations.
+- Le dossier images regroupes différentes images utilisés.
+
+
+
+### 5\. Ressources supplémentaires 
 
 - ReactJS - Bibliothèque JavaScript pour la construction d'interfaces utilisateur.
 - Tailwind CSS - Cadre CSS utilitaire pour le stylage rapide et flexible.
